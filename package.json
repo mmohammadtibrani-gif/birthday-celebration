@@ -1,0 +1,12 @@
+{
+  "name": "birthday-site",
+  "version": "1.0.0",
+  "description": "A multi-section 3D birthday celebration website with a small persistent backend (no external dependencies).",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

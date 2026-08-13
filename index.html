@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,900;1,9..144,500&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="scene"></canvas>
+
+<nav id="dots">
+  <a href="#hero" data-label="Hero"></a>
+  <a href="#countdown" data-label="Countdown"></a>
+  <a href="#message" data-label="Message"></a>
+  <a href="#cake" data-label="Cake"></a>
+  <a href="#gallery" data-label="Photos"></a>
+  <a href="#guestbook" data-label="Wall"></a>
+</nav>
+
+<main>
+
+  <section id="hero" class="panel">
+    <div class="eyebrow">A Celebration For</div>
+    <h1 contenteditable="true" data-key="name">Someone Wonderful</h1>
+    <p class="subhead" contenteditable="true" data-key="subhead">This is your party to plan — edit anything on the page.</p>
+    <button class="scrolldown" id="scrollcue">Scroll to begin ↓</button>
+  </section>
+
+  <section id="countdown" class="panel">
+    <div class="section-tag">Time Left</div>
+    <div class="countdown-grid">
+      <div class="unit"><span class="num" id="cd-days">00</span><span class="lbl">Days</span></div>
+      <div class="unit"><span class="num" id="cd-hours">00</span><span class="lbl">Hours</span></div>
+      <div class="unit"><span class="num" id="cd-mins">00</span><span class="lbl">Mins</span></div>
+      <div class="unit"><span class="num" id="cd-secs">00</span><span class="lbl">Secs</span></div>
+    </div>
+    <label class="datewrap">
+      Target moment
+      <input type="datetime-local" id="target-date" class="datepick">
+    </label>
+  </section>
+
+  <section id="message" class="panel">
+    <div class="msg-card">
+      <div class="msg-eyebrow">The Message</div>
+      <div class="msg-body" contenteditable="true" data-key="message">Write your birthday message here. Talk about a memory, a wish, or just how much this person means to you.</div>
+    </div>
+  </section>
+
+  <section id="cake" class="panel">
+    <div class="section-tag">Make a Wish</div>
+    <p class="cake-hint">Click each candle to blow it out. Blow out all five to light the sky.</p>
+    <button class="relight" id="relight">Relight candles</button>
+  </section>
+
+  <section id="gallery" class="panel">
+    <div class="section-tag">Photo Wall</div>
+    <div class="gallery-grid" id="gallery-grid"></div>
+  </section>
+
+  <section id="guestbook" class="panel">
+    <div class="section-tag">Leave a Wish</div>
+    <form id="guest-form" class="guest-form">
+      <input type="text" id="guest-name" placeholder="Your name" maxlength="60" required>
+      <textarea id="guest-message" placeholder="Write a birthday wish..." maxlength="500" required></textarea>
+      <button type="submit">Post to the wall</button>
+    </form>
+    <div id="guest-wall" class="guest-wall"></div>
+  </section>
+
+  <footer contenteditable="true" data-key="footer">Made with love, one candle at a time.</footer>
+
+</main>
+
+<div class="save-indicator" id="save-indicator">Saved ✓</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
